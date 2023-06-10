@@ -3,7 +3,6 @@ import { search } from "@/assets/icons";
 import { useRouter } from "next/router";
 export default function NavbarLayout() {
   const route = useRouter();
-
   return (
     <>
       <nav className="top-0 bg-[#000000]">
@@ -62,7 +61,7 @@ export default function NavbarLayout() {
               Sign Up
             </div>
           </div>
-          <span className="flex items-center justify-end">
+          <div className="flex items-center justify-end">
             <input
               type="text"
               placeholder="What are you looking for?"
@@ -71,7 +70,8 @@ export default function NavbarLayout() {
             <div className="absolute pr-[12px]">
               <Image src={search} alt="search" />
             </div>
-          </span>
+          </div>
+          <div></div>
         </div>
       </nav>
     </>
