@@ -33,9 +33,7 @@ export default function NavbarLayout() {
           </div>
           <div className="flex gap-x-[48px]">
             <div
-              className={
-                route?.pathname.toString() == "/home" ? "underline" : ""
-              }
+              className={route?.pathname.toString() == "/" ? "underline" : ""}
             >
               Home
             </div>

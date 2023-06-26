@@ -7,6 +7,8 @@ import sendFooter from "./sendFooter.svg";
 import google from "./google.svg";
 import arrowleft from "./arrowleft.svg";
 import arrowright from "./arrowright.svg";
+import eyeOpen from "./eyeOpen.svg";
+import eyeClose from "./eyeClose.svg";
 export {
   instagramFooter,
   facebookFooter,
@@ -17,4 +19,6 @@ export {
   google,
   arrowleft,
   arrowright,
+  eyeOpen,
+  eyeClose,
 };

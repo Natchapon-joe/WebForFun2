@@ -15,7 +15,11 @@ export default function Register() {
           <div className="flex flex-col justify-end w-full">
             <div className="flex flex-col w-full justify-end items-center">
               {/* Components */}
-              {login ? <LoginForm /> : <RegisterForm setLogin={setLogin} />}
+              {login ? (
+                <LoginForm setLogin={setLogin} />
+              ) : (
+                <RegisterForm setLogin={setLogin} />
+              )}
             </div>
           </div>
         </div>

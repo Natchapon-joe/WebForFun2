@@ -1,4 +1,7 @@
-export default function LoginForm() {
+interface loginForm {
+  setLogin: (value: boolean) => void;
+}
+export default function LoginForm({ setLogin }: loginForm) {
   return (
     <div className="flex flex-col gap-y-[48px]">
       <div>
@@ -12,7 +15,7 @@ export default function LoginForm() {
           placeholder="Email or Phone Number"
         />
         <input
-          type="text"
+          type="password"
           className="border-b-[1px] h-[32px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Password"
         />
@@ -22,7 +25,14 @@ export default function LoginForm() {
             className="bg-[#DB4444] h-[56px] w-[143px] text-white rounded-[4px] cursor-pointer"
             value="Login"
           />
-          <p className="text-[#DB4444] cursor-pointer">Forget Password?</p>
+          <p
+            className="text-[#DB4444] cursor-pointer"
+            onClick={() => {
+              setLogin(false);
+            }}
+          >
+            Create Account
+          </p>
         </div>
       </div>
     </div>

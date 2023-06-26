@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Image from "next/image";
-import { google } from "@/assets/icons";
+import { google, eyeOpen, eyeClose } from "@/assets/icons";
+
 interface setLogin {
   setLogin: (value: boolean) => void;
 }
 export default function RegisterForm({ setLogin }: setLogin) {
+  const [seePassword, setSeePassword] = useState<Boolean>(false);
   return (
     <div className="flex flex-col gap-y-[48px]">
       <div>
@@ -21,11 +24,29 @@ export default function RegisterForm({ setLogin }: setLogin) {
           className="border-b-[1px] h-[32px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Email or Phone Number"
         />
-        <input
-          type="text"
-          className="border-b-[1px] h-[32px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          placeholder="Password"
-        />
+        <div className="w-full h-full flex justify-end">
+          {seePassword ? (
+            <div
+              className="absolute flex cursor-pointer"
+              onClick={() => setSeePassword(false)}
+            >
+              <Image src={eyeOpen} alt="click to see password" />
+            </div>
+          ) : (
+            <div className="absolute flex cursor-pointer">
+              <Image
+                src={eyeClose}
+                alt="click to hide password"
+                onClick={() => setSeePassword(true)}
+              />
+            </div>
+          )}
+          <input
+            type={seePassword ? "text" : "password"}
+            className="border-b-[1px] w-full h-[32px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Password"
+          />
+        </div>
         <div className="h-full w-full flex flex-col gap-y-[16px]">
           <input
             type="button"
